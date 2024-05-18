@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Space+Grotesk:wght@300..700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+main {
+  background-color: #bacfbf;
+  height: 100dvh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button {
+  width: 270px;
+  height: 110px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  // border: 2px solid tomato;
+  overflow: hidden;
+  font-family: "Archivo", sans-serif;
+  font-weight: bold;
+  color: #8C8C8E;
+  font-size: 54px;
+}
+
+.previous, .next {
+  cursor: pointer;
+  user-select: none;
+  height: 60px;
+  width: 56px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba($color: #000000, $alpha: .4);
+  border-radius: 10px;
+
+  span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 56px;
+    width: 56px;
+    border-radius: 12px;
+    font-size: 25px;
+    background-color: #4E467C;
+    color: white;
+    position: relative;
+    z-index: 99;
+  }
+
+}
+
+.numbers {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  position: relative;
+  
+  .zero {
+    position: absolute;
+    right: 0px;
+  }
+}
+
+.circle {
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform .6s cubic-bezier(0.5, 1.8, 0.8, 1);
+
+  span {
+    --number-position: calc(175px - 18px);
+    
+    display: block;
+    position: absolute;
+    transform: translate(
+      calc(cos(var(--number-angle)) * var(--number-position)), 
+      calc(sin(var(--number-angle)) * var(--number-position))
+    ) rotate(var(--angle));
+
+    &:nth-of-type(1) {
+      --number-angle: pi;
+      --angle: 360deg;
+    }
+    &:nth-of-type(2) {
+      --number-angle: calc(5*pi / 4);
+      --angle: 45deg;
+    }
+    &:nth-of-type(3) {
+      --number-angle: calc(3*pi / 2);
+      --angle: 90deg;
+    }
+    &:nth-of-type(4) {
+      --number-angle: calc(7*pi / 4);
+      --angle: 135deg;
+    }
+    &:nth-of-type(5) {
+      --number-angle: calc(2*pi);
+      --angle: 180deg;
+    }
+    &:nth-of-type(6) {
+      --number-angle: calc(9*pi / 4);
+      --angle: 225deg;
+      
+    }
+    &:nth-of-type(7) {
+      --number-angle: calc(5*pi / 2);
+      --angle: 270deg;
+      
+    }
+    &:nth-of-type(8) {
+      --number-angle: calc(11*pi / 4);
+      --angle: 315deg;
+      
+    }
+  }
+}
