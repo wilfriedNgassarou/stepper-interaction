@@ -12,6 +12,22 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+}
+
+.credits {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  top: 50px;
+  width: 50%;
+
+  a {
+    color: #2e58d9;
+    text-decoration: none;
+  }
+
 }
 
 .button {
