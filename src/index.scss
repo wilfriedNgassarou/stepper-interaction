@@ -75,7 +75,7 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: transform .6s cubic-bezier(0.5, 1.8, 0.8, 1);
+  transition: transform .6s cubic-bezier(.4,2.06,.63,.54);
 
   span {
     --number-position: calc(175px - 18px);
